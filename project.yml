@@ -1,0 +1,31 @@
+name: StickyBloom
+options:
+  bundleIdPrefix: com.ecemozturk
+  deploymentTarget:
+    macOS: "13.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "13.0"
+    PRODUCT_BUNDLE_IDENTIFIER: com.ecemozturk.StickyBloom
+
+targets:
+  StickyBloom:
+    type: application
+    platform: macOS
+    sources:
+      - path: StickyBloom
+    settings:
+      base:
+        PRODUCT_NAME: StickyBloom
+        INFOPLIST_FILE: StickyBloom/Info.plist
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_STYLE: Automatic
+    entitlements:
+      path: StickyBloom/StickyBloom.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.network.client: true
+        com.apple.security.personal-information.location: true
