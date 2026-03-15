@@ -52,11 +52,10 @@ final class WindowManager: ObservableObject {
 
     func bringToFront(stickyID: UUID) {
         guard let controller = controllers[stickyID], let window = controller.window else { return }
-        let originalLevel = window.level
-        window.level = NSWindow.Level(rawValue: NSWindow.Level.floating.rawValue + 1)
+        window.level = NSWindow.Level(rawValue: NSWindow.Level.normal.rawValue + 1)
         window.makeKeyAndOrderFront(nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            window.level = originalLevel
+            window.level = .normal
         }
     }
 
