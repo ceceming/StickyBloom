@@ -42,7 +42,13 @@ struct StickyView: View {
                         appState.removeSticky(id: stickyID)
                         windowManager.close(stickyID: stickyID)
                     },
-                    onDragChanged: { _ in }
+                    onDragChanged: { delta in
+                        guard let window = windowProxy.window else { return }
+                        var origin = window.frame.origin
+                        origin.x += delta.width
+                        origin.y -= delta.height  // macOS Y is inverted from SwiftUI
+                        window.setFrameOrigin(origin)
+                    }
                 )
                 .onChange(of: title) { newTitle in
                     updateModel { $0.title = newTitle }
@@ -113,12 +119,14 @@ struct CornerResizeHandlesView: View {
 
     var body: some View {
         HStack {
+            // Bottom-left: drag left/right adjusts left edge; drag down expands bottom
             ResizeHandle(icon: "arrow.up.left.and.arrow.down.right") { delta in
-                resize(dx: delta.x, dy: 0, dw: -delta.x, dh: 0)
+                resize(dx: delta.width, dy: -delta.height, dw: -delta.width, dh: delta.height)
             }
             Spacer()
+            // Bottom-right: drag left/right adjusts right edge; drag down expands bottom
             ResizeHandle(icon: "arrow.up.right.and.arrow.down.left") { delta in
-                resize(dx: 0, dy: 0, dw: delta.x, dh: 0)
+                resize(dx: 0, dy: -delta.height, dw: delta.width, dh: delta.height)
             }
         }
     }
@@ -126,17 +134,25 @@ struct CornerResizeHandlesView: View {
     private func resize(dx: CGFloat, dy: CGFloat, dw: CGFloat, dh: CGFloat) {
         guard let window = windowProxy.window else { return }
         var frame = window.frame
-        frame.origin.x += dx
-        frame.origin.y += dy
-        frame.size.width = max(200, frame.size.width + dw)
-        frame.size.height = max(160, frame.size.height + dh)
+        let newWidth = frame.size.width + dw
+        let newHeight = frame.size.height + dh
+        if newWidth >= 200 {
+            frame.origin.x += dx
+            frame.size.width = newWidth
+        }
+        if newHeight >= 160 {
+            frame.origin.y += dy
+            frame.size.height = newHeight
+        }
         window.setFrame(frame, display: true, animate: false)
     }
 }
 
 private struct ResizeHandle: View {
     let icon: String
-    let onDrag: (CGPoint) -> Void
+    let onDrag: (CGSize) -> Void
+
+    @State private var lastTranslation: CGSize = .zero
 
     var body: some View {
         Image(systemName: icon)
@@ -147,7 +163,15 @@ private struct ResizeHandle: View {
             .gesture(
                 DragGesture()
                     .onChanged { value in
-                        onDrag(CGPoint(x: value.translation.width, y: value.translation.height))
+                        let delta = CGSize(
+                            width: value.translation.width - lastTranslation.width,
+                            height: value.translation.height - lastTranslation.height
+                        )
+                        lastTranslation = value.translation
+                        onDrag(delta)
+                    }
+                    .onEnded { _ in
+                        lastTranslation = .zero
                     }
             )
     }

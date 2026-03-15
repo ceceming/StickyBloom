@@ -16,9 +16,9 @@ final class DashboardPanel: NSPanel {
         isOpaque = false
         backgroundColor = .clear
         hasShadow = true
-        level = .floating
+        level = .normal
         isMovableByWindowBackground = true
-        collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
+        collectionBehavior = [.stationary, .ignoresCycle]
 
         let view = DashboardView(appState: appState)
         let hosting = NSHostingView(rootView: view)

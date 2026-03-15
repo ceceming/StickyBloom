@@ -6,6 +6,8 @@ struct StickyHeaderView: View {
     var onClose: () -> Void
     var onDragChanged: (CGSize) -> Void
 
+    @State private var lastDragTranslation: CGSize = .zero
+
     var body: some View {
         HStack(spacing: 6) {
             // Drag handle
@@ -15,7 +17,15 @@ struct StickyHeaderView: View {
                 .gesture(
                     DragGesture()
                         .onChanged { value in
-                            onDragChanged(value.translation)
+                            let delta = CGSize(
+                                width: value.translation.width - lastDragTranslation.width,
+                                height: value.translation.height - lastDragTranslation.height
+                            )
+                            lastDragTranslation = value.translation
+                            onDragChanged(delta)
+                        }
+                        .onEnded { _ in
+                            lastDragTranslation = .zero
                         }
                 )
 
