@@ -27,25 +27,18 @@ struct StickyView: View {
 
     var body: some View {
         ZStack {
-            // Background: .regularMaterial + tinted overlay
             RoundedRectangle(cornerRadius: 16)
                 .fill(.regularMaterial)
 
             RoundedRectangle(cornerRadius: 16)
-                .fill(backgroundColor.opacity(model?.backgroundOpacity ?? 0.75))
+                .fill(backgroundColor.opacity(0.55))
 
             VStack(spacing: 0) {
-                // Header
-                StickyHeaderView(
-                    title: $title,
-                    onClose: {
-                        appState.removeSticky(id: stickyID)
-                        windowManager.close(stickyID: stickyID)
-                    }
-                )
-                .onChange(of: title) { newTitle in
-                    updateModel { $0.title = newTitle }
-                }
+                // Header (drag handle + close)
+                StickyHeaderView(onClose: {
+                    appState.removeSticky(id: stickyID)
+                    windowManager.close(stickyID: stickyID)
+                })
 
                 Divider().opacity(0.3)
 
@@ -56,6 +49,18 @@ struct StickyView: View {
                 .frame(height: 32)
 
                 Divider().opacity(0.3)
+
+                // Title field — just above the note area
+                TextField("Title...", text: $title)
+                    .textFieldStyle(.plain)
+                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .foregroundStyle(.primary)
+                    .padding(.horizontal, 12)
+                    .padding(.top, 8)
+                    .padding(.bottom, 4)
+                    .onChange(of: title) { newTitle in
+                        updateModel { $0.title = newTitle }
+                    }
 
                 // Rich text editor
                 RichTextEditor(
@@ -80,6 +85,10 @@ struct StickyView: View {
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: 16))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .strokeBorder(backgroundColor, lineWidth: 4)
+        )
         .shadow(color: .black.opacity(0.15), radius: 12, x: 0, y: 4)
         .onAppear {
             let m = appState.sticky(for: stickyID)

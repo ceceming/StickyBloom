@@ -3,7 +3,7 @@ import AppKit
 
 struct StickyToolbarView: View {
     let textView: () -> NSTextView?
-    @State private var showTableInsert = false
+    @State private var tableInsertController: TableInsertWindowController?
     @State private var showFontPicker = false
     @State private var fontSize: Double = 14
 
@@ -64,7 +64,12 @@ struct StickyToolbarView: View {
 
             // Table
             ToolbarButton(icon: "tablecells", tooltip: "Insert Table") {
-                showTableInsert = true
+                guard let tv = textView() else { return }
+                let controller = TableInsertWindowController(textView: tv) { [self] in
+                    tableInsertController = nil
+                }
+                tableInsertController = controller
+                controller.showWindow(nil)
             }
 
             // Todo checkbox
@@ -82,11 +87,6 @@ struct StickyToolbarView: View {
         .padding(.horizontal, 8)
         .padding(.vertical, 4)
         .background(.ultraThinMaterial)
-        .sheet(isPresented: $showTableInsert) {
-            TableInsertView { rows, cols in
-                textView()?.insertTable(rows: rows, columns: cols)
-            }
-        }
     }
 
     // MARK: - Formatting

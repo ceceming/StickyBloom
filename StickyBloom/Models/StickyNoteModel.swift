@@ -30,6 +30,7 @@ struct StickyNoteModel: Identifiable, Codable {
     var createdAt: Date
     var modifiedAt: Date
     var mentionLinks: [MentionLink]
+    var projectID: UUID?
 
     init(
         id: UUID = UUID(),
@@ -41,7 +42,8 @@ struct StickyNoteModel: Identifiable, Codable {
         zIndex: Int = 0,
         createdAt: Date = Date(),
         modifiedAt: Date = Date(),
-        mentionLinks: [MentionLink] = []
+        mentionLinks: [MentionLink] = [],
+        projectID: UUID? = nil
     ) {
         self.id = id
         self.title = title
@@ -53,5 +55,6 @@ struct StickyNoteModel: Identifiable, Codable {
         self.createdAt = createdAt
         self.modifiedAt = modifiedAt
         self.mentionLinks = mentionLinks
+        self.projectID = projectID
     }
 }

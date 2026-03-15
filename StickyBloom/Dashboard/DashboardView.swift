@@ -75,6 +75,10 @@ struct DashboardView: View {
                 .buttonStyle(.plain)
                 .foregroundStyle(.primary)
 
+                Divider().opacity(0.3)
+
+                NotesListView(appState: appState)
+
                 if showSettings {
                     Divider().opacity(0.3)
                     DashboardSettingsView(appState: appState)

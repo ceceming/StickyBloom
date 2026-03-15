@@ -26,5 +26,18 @@
 	<string>StickyBloom uses your location to show your city name on the dashboard.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.stickybloom.sticky-id</string>
+			<key>UTTypeDescription</key>
+			<string>StickyBloom Note ID</string>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

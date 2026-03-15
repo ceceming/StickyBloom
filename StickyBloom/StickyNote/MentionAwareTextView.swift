@@ -9,6 +9,8 @@ final class MentionAwareTextView: NSTextView {
     var onMentionClicked: ((UUID) -> Void)?
     var onTodoToggled: ((Int) -> Void)?
 
+    override var mouseDownCanMoveWindow: Bool { true }
+
     override func mouseDown(with event: NSEvent) {
         let point = convert(event.locationInWindow, from: nil)
         if handleMentionClick(at: point) { return }

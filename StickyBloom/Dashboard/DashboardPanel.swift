@@ -3,7 +3,7 @@ import SwiftUI
 
 final class DashboardPanel: NSPanel {
     private var hostingView: NSHostingView<DashboardView>?
-    private static let collapsedHeight: CGFloat = 560
+    private static let collapsedHeight: CGFloat = 860
     private static let settingsHeight: CGFloat = 180
 
     init(appState: AppState) {

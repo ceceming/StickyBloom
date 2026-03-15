@@ -12,7 +12,7 @@ struct DashboardSettingsModel: Codable {
         backgroundColor: String = "#1E1E2E",
         opacity: Double = 0.85,
         secondTimezoneIdentifier: String? = nil,
-        frame: CGRect = CGRect(x: 40, y: 60, width: 320, height: 560),
+        frame: CGRect = CGRect(x: 40, y: 60, width: 320, height: 860),
         showOnRightSide: Bool = false
     ) {
         self.backgroundColor = backgroundColor

@@ -13,6 +13,7 @@ final class PersistenceService {
 
     private var stickiesURL: URL { baseURL.appendingPathComponent("stickies.json") }
     private var dashboardURL: URL { baseURL.appendingPathComponent("dashboard.json") }
+    private var projectsURL: URL { baseURL.appendingPathComponent("projects.json") }
 
     func loadStickies() -> [StickyNoteModel] {
         guard let data = try? Data(contentsOf: stickiesURL) else { return [] }
@@ -32,5 +33,15 @@ final class PersistenceService {
     func saveDashboardSettings(_ settings: DashboardSettingsModel) {
         guard let data = try? JSONEncoder().encode(settings) else { return }
         try? data.write(to: dashboardURL, options: .atomic)
+    }
+
+    func loadProjects() -> [ProjectModel] {
+        guard let data = try? Data(contentsOf: projectsURL) else { return [] }
+        return (try? JSONDecoder().decode([ProjectModel].self, from: data)) ?? []
+    }
+
+    func saveProjects(_ projects: [ProjectModel]) {
+        guard let data = try? JSONEncoder().encode(projects) else { return }
+        try? data.write(to: projectsURL, options: .atomic)
     }
 }
