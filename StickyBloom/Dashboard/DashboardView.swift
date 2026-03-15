@@ -5,6 +5,7 @@ struct DashboardView: View {
     @ObservedObject var appState: AppState
     @StateObject private var locationService = LocationService()
     @State private var showSettings = false
+    var onSettingsToggled: ((Bool) -> Void)?
 
     private var tintColor: Color {
         Color(NSColor(hex: appState.dashboardSettings.backgroundColor) ?? .darkGray)
@@ -28,12 +29,15 @@ struct DashboardView: View {
                     Spacer()
                     Button {
                         showSettings.toggle()
+                        onSettingsToggled?(showSettings)
                     } label: {
                         Image(systemName: "gear")
                             .font(.system(size: 14))
+                            .rotationEffect(.degrees(showSettings ? 45 : 0))
+                            .animation(.easeInOut(duration: 0.2), value: showSettings)
                     }
                     .buttonStyle(.plain)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(showSettings ? .primary : .secondary)
                 }
 
                 // Clock

@@ -3,9 +3,13 @@ import SwiftUI
 
 final class DashboardPanel: NSPanel {
     private var hostingView: NSHostingView<DashboardView>?
+    private static let collapsedHeight: CGFloat = 560
+    private static let settingsHeight: CGFloat = 180
 
     init(appState: AppState) {
-        let savedFrame = appState.dashboardSettings.frame.cgRect
+        var savedFrame = appState.dashboardSettings.frame.cgRect
+        // Always start at collapsed height so saved expanded-state doesn't persist
+        savedFrame.size.height = DashboardPanel.collapsedHeight
         super.init(
             contentRect: savedFrame,
             styleMask: [.nonactivatingPanel, .borderless, .resizable, .fullSizeContentView],
@@ -20,7 +24,10 @@ final class DashboardPanel: NSPanel {
         isMovableByWindowBackground = true
         collectionBehavior = [.managed, .ignoresCycle]
 
-        let view = DashboardView(appState: appState)
+        var view = DashboardView(appState: appState)
+        view.onSettingsToggled = { [weak self] show in
+            self?.animateResize(showSettings: show)
+        }
         let hosting = NSHostingView(rootView: view)
         hosting.frame = CGRect(origin: .zero, size: savedFrame.size)
         contentView = hosting
@@ -50,5 +57,16 @@ final class DashboardPanel: NSPanel {
         Task { @MainActor in
             appState.dashboardSettings.frame = CGRectCodable(self.frame)
         }
+    }
+
+    private func animateResize(showSettings: Bool) {
+        let targetHeight = showSettings
+            ? DashboardPanel.collapsedHeight + DashboardPanel.settingsHeight
+            : DashboardPanel.collapsedHeight
+        var newFrame = frame
+        // Keep the top edge fixed; expand/collapse downward
+        newFrame.origin.y = newFrame.origin.y + newFrame.size.height - targetHeight
+        newFrame.size.height = targetHeight
+        setFrame(newFrame, display: true, animate: true)
     }
 }
