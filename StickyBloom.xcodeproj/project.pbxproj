@@ -199,6 +199,7 @@
 				3D1379C63D0649C5BDA68978,
 			);
 			name = "StickyBloom";
+			path = StickyBloom;
 			sourceTree = "<group>";
 		};
 		6922EE104B524515B080014B = {

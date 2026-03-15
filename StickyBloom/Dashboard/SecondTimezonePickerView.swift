@@ -26,7 +26,26 @@ struct SecondTimezonePickerView: View {
                 .padding(.horizontal)
                 .padding(.bottom, 8)
 
-            List(filteredZones, id: \.self) { identifier in
+            ScrollView {
+                zoneRows
+            }
+
+            if selectedIdentifier != nil {
+                Button("Remove Second Timezone") {
+                    selectedIdentifier = nil
+                    dismiss()
+                }
+                .foregroundStyle(.red)
+                .padding()
+            }
+        }
+        .frame(width: 360, height: 460)
+    }
+
+    @ViewBuilder
+    private var zoneRows: some View {
+        LazyVStack(alignment: .leading, spacing: 0) {
+            ForEach(AnyRandomAccessCollection<String>(filteredZones), id: \.self) { (identifier: String) in
                 Button {
                     selectedIdentifier = identifier
                     dismiss()
@@ -42,22 +61,16 @@ struct SecondTimezonePickerView: View {
                         Spacer()
                         if selectedIdentifier == identifier {
                             Image(systemName: "checkmark")
-                                .foregroundStyle(.accentColor)
+                                .foregroundStyle(Color.accentColor)
                         }
                     }
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
-            }
-
-            if selectedIdentifier != nil {
-                Button("Remove Second Timezone") {
-                    selectedIdentifier = nil
-                    dismiss()
-                }
-                .foregroundStyle(.red)
-                .padding()
+                Divider()
             }
         }
-        .frame(width: 360, height: 460)
     }
 }

@@ -172,8 +172,8 @@ struct PlantShape: Shape {
             for i in 0..<plant.petalCount {
                 let angle = (Double(i) / Double(plant.petalCount)) * .pi * 2
                 let petalCenter = CGPoint(
-                    x: center.x + cos(angle) * radius * 0.7,
-                    y: center.y + sin(angle) * radius * 0.7
+                    x: center.x + CGFloat(cos(angle)) * radius * 0.7,
+                    y: center.y + CGFloat(sin(angle)) * radius * 0.7
                 )
                 path.addEllipse(in: CGRect(
                     x: petalCenter.x - petalRadius,

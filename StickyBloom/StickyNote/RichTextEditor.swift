@@ -86,7 +86,7 @@ struct RichTextEditor: NSViewRepresentable {
     func updateNSView(_ scrollView: NSScrollView, context: Context) {
         guard let textView = scrollView.documentView as? NSTextView else { return }
         // Only update if content actually changed externally
-        if textView.attributedString() != attributedText && !textView.isFirstResponder {
+        if textView.attributedString() != attributedText && textView.window?.firstResponder !== textView {
             textView.textStorage?.setAttributedString(attributedText)
         }
         context.coordinator.appState = appState

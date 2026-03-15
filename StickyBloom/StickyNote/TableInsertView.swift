@@ -73,14 +73,8 @@ extension NSTextView {
             for col in 0..<columns {
                 let block = NSTextTableBlock(table: table, startingRow: row, rowSpan: 1, startingColumn: col, columnSpan: 1)
                 block.setContentWidth(1.0 / CGFloat(columns), type: .percentageValueType)
-                block.setBorderColor(.separatorColor, for: .minX)
-                block.setBorderColor(.separatorColor, for: .maxX)
-                block.setBorderColor(.separatorColor, for: .minY)
-                block.setBorderColor(.separatorColor, for: .maxY)
-                block.setWidth(0.5, type: .absoluteValueType, for: .minX)
-                block.setWidth(0.5, type: .absoluteValueType, for: .maxX)
-                block.setWidth(0.5, type: .absoluteValueType, for: .minY)
-                block.setWidth(0.5, type: .absoluteValueType, for: .maxY)
+                block.setBorderColor(.separatorColor)
+                block.setWidth(0.5, type: .absoluteValueType, for: .border)
 
                 let para = NSMutableParagraphStyle()
                 para.textBlocks = [block]

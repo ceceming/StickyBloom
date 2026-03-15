@@ -1,5 +1,6 @@
 import AppKit
 
+@MainActor
 final class RichTextCoordinator: NSObject, NSTextViewDelegate, NSTextStorageDelegate {
     var onTextChange: ((NSAttributedString) -> Void)?
     var onMentionClicked: ((UUID) -> Void)?
