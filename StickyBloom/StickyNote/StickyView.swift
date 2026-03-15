@@ -41,13 +41,6 @@ struct StickyView: View {
                     onClose: {
                         appState.removeSticky(id: stickyID)
                         windowManager.close(stickyID: stickyID)
-                    },
-                    onDragChanged: { delta in
-                        guard let window = windowProxy.window else { return }
-                        var origin = window.frame.origin
-                        origin.x += delta.width
-                        origin.y -= delta.height  // macOS Y is inverted from SwiftUI
-                        window.setFrameOrigin(origin)
                     }
                 )
                 .onChange(of: title) { newTitle in

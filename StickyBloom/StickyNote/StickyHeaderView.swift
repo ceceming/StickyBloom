@@ -4,30 +4,16 @@ import AppKit
 struct StickyHeaderView: View {
     @Binding var title: String
     var onClose: () -> Void
-    var onDragChanged: (CGSize) -> Void
-
-    @State private var lastDragTranslation: CGSize = .zero
 
     var body: some View {
         HStack(spacing: 6) {
-            // Drag handle
+            // Drag handle — uses native AppKit performDrag so it works on nonactivatingPanel
             Image(systemName: "line.3.horizontal")
                 .font(.system(size: 10))
                 .foregroundStyle(.secondary.opacity(0.5))
-                .gesture(
-                    DragGesture()
-                        .onChanged { value in
-                            let delta = CGSize(
-                                width: value.translation.width - lastDragTranslation.width,
-                                height: value.translation.height - lastDragTranslation.height
-                            )
-                            lastDragTranslation = value.translation
-                            onDragChanged(delta)
-                        }
-                        .onEnded { _ in
-                            lastDragTranslation = .zero
-                        }
-                )
+                .frame(width: 20, height: 24)
+                .contentShape(Rectangle())
+                .overlay(WindowDragArea())
 
             // Title field
             TextField("Title...", text: $title)
@@ -48,5 +34,20 @@ struct StickyHeaderView: View {
         }
         .padding(.horizontal, 10)
         .padding(.vertical, 6)
+    }
+}
+
+// MARK: - Native Window Drag
+
+private struct WindowDragArea: NSViewRepresentable {
+    func makeNSView(context: Context) -> DragView { DragView() }
+    func updateNSView(_ nsView: DragView, context: Context) {}
+
+    final class DragView: NSView {
+        override func mouseDown(with event: NSEvent) {
+            window?.performDrag(with: event)
+        }
+        override func acceptsFirstMouse(for event: NSEvent?) -> Bool { true }
+        override var acceptsFirstResponder: Bool { false }
     }
 }

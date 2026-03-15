@@ -19,7 +19,7 @@ final class StickyPanel: NSPanel {
         hasShadow = true
         level = .normal
         isMovableByWindowBackground = false
-        collectionBehavior = [.stationary, .ignoresCycle]
+        collectionBehavior = [.managed, .ignoresCycle]
         minSize = CGSize(width: 200, height: 160)
     }
 }
