@@ -18,7 +18,7 @@ final class DashboardPanel: NSPanel {
         hasShadow = true
         level = .normal
         isMovableByWindowBackground = true
-        collectionBehavior = [.stationary, .ignoresCycle]
+        collectionBehavior = [.managed, .ignoresCycle]
 
         let view = DashboardView(appState: appState)
         let hosting = NSHostingView(rootView: view)
