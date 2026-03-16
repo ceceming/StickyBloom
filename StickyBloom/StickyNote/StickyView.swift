@@ -28,10 +28,7 @@ struct StickyView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
-                .fill(.ultraThinMaterial)
-
-            RoundedRectangle(cornerRadius: 16)
-                .fill(backgroundColor.opacity(0.40))
+                .fill(backgroundColor)
 
             VStack(spacing: 0) {
                 // Header (drag handle + close)
@@ -58,6 +55,11 @@ struct StickyView: View {
                     .padding(.horizontal, 12)
                     .padding(.top, 8)
                     .padding(.bottom, 4)
+                    .onSubmit {
+                        if let tv = windowProxy.window?.contentView?.findSubview(ofType: MentionAwareTextView.self) {
+                            windowProxy.window?.makeFirstResponder(tv)
+                        }
+                    }
                     .onChange(of: title) { newTitle in
                         updateModel { $0.title = newTitle }
                     }
@@ -89,7 +91,6 @@ struct StickyView: View {
             RoundedRectangle(cornerRadius: 16)
                 .strokeBorder(backgroundColor, lineWidth: 4)
         )
-        .shadow(color: .black.opacity(0.15), radius: 12, x: 0, y: 4)
         .onAppear {
             let m = appState.sticky(for: stickyID)
             if let m {

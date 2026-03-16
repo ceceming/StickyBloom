@@ -95,10 +95,11 @@ extension NSTextView {
 
         let table = NSTextTable()
         table.numberOfColumns = columns
-        table.setContentWidth(1.0, type: .percentageValueType)
-        table.collapsesBorders = true
+        table.setContentWidth(100.0, type: .percentageValueType)
+        table.collapsesBorders = false
 
         let cellFont = font ?? NSFont.systemFont(ofSize: 13)
+        let borderColor = NSColor.labelColor.withAlphaComponent(0.25)
         let result = NSMutableAttributedString()
 
         for row in 0..<rows {
@@ -108,15 +109,17 @@ extension NSTextView {
                     startingRow: row, rowSpan: 1,
                     startingColumn: col, columnSpan: 1
                 )
-                block.setContentWidth(1.0 / CGFloat(columns), type: .percentageValueType)
-                block.setBorderColor(.separatorColor)
-                block.setWidth(1, type: .absoluteValueType, for: .border)
+                block.setContentWidth(100.0 / CGFloat(columns), type: .percentageValueType)
+                block.setValue(40.0, type: .absoluteValueType, for: .minimumWidth)
+                block.setValue(15.0, type: .absoluteValueType, for: .minimumHeight)
+                block.backgroundColor = NSColor.controlBackgroundColor.withAlphaComponent(0.15)
+                block.setBorderColor(borderColor)
+                block.setWidth(0.5, type: .absoluteValueType, for: .border)
                 block.setWidth(4, type: .absoluteValueType, for: .padding)
 
                 let para = NSMutableParagraphStyle()
                 para.textBlocks = [block]
 
-                // Every cell must end with \n to form a proper paragraph
                 let cell = NSMutableAttributedString(
                     string: " \n",
                     attributes: [.paragraphStyle: para, .font: cellFont]
@@ -126,8 +129,12 @@ extension NSTextView {
         }
 
         let insertRange = selectedRange()
-        storage.replaceCharacters(in: insertRange, with: result)
-        // Place cursor inside the first cell (before the \n)
+        if shouldChangeText(in: insertRange, replacementString: result.string) {
+            storage.beginEditing()
+            storage.replaceCharacters(in: insertRange, with: result)
+            storage.endEditing()
+            didChangeText()
+        }
         setSelectedRange(NSRange(location: insertRange.location + 1, length: 0))
         scrollRangeToVisible(selectedRange())
     }
