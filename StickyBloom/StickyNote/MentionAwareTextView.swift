@@ -11,6 +11,56 @@ final class MentionAwareTextView: NSTextView {
 
     override var mouseDownCanMoveWindow: Bool { true }
 
+    // MARK: - Table Deletion
+
+    override func deleteBackward(_ sender: Any?) {
+        let loc = selectedRange().location
+        let prevIsTable = loc > 0 && tableAt(index: loc - 1) != nil
+        let curIsTable  = loc < (textStorage?.length ?? 0) && tableAt(index: loc) != nil
+        // Delete the whole table only when cursor is OUTSIDE the table (after it)
+        if prevIsTable && !curIsTable, let table = tableAt(index: loc - 1) {
+            deleteTable(table)
+            return
+        }
+        super.deleteBackward(sender)
+    }
+
+    override func deleteForward(_ sender: Any?) {
+        let loc = selectedRange().location
+        let nextIsTable = loc < (textStorage?.length ?? 0) && tableAt(index: loc) != nil
+        let prevIsTable = loc > 0 && tableAt(index: loc - 1) != nil
+        // Delete the whole table only when cursor is OUTSIDE the table (before it)
+        if nextIsTable && !prevIsTable, let table = tableAt(index: loc) {
+            deleteTable(table)
+            return
+        }
+        super.deleteForward(sender)
+    }
+
+    private func tableAt(index: Int) -> NSTextTable? {
+        guard let storage = textStorage, index < storage.length else { return nil }
+        let para = storage.attribute(.paragraphStyle, at: index, effectiveRange: nil) as? NSParagraphStyle
+        return para?.textBlocks.compactMap { $0 as? NSTextTableBlock }.first?.table
+    }
+
+    private func deleteTable(_ table: NSTextTable) {
+        guard let storage = textStorage else { return }
+        var start = storage.length
+        var end = 0
+        let fullRange = NSRange(location: 0, length: storage.length)
+        storage.enumerateAttribute(.paragraphStyle, in: fullRange, options: []) { value, range, _ in
+            guard let para = value as? NSParagraphStyle,
+                  para.textBlocks.compactMap({ $0 as? NSTextTableBlock }).contains(where: { $0.table === table })
+            else { return }
+            start = min(start, range.location)
+            end = max(end, range.upperBound)
+        }
+        guard start < end else { return }
+        let tableRange = NSRange(location: start, length: end - start)
+        storage.replaceCharacters(in: tableRange, with: "")
+        setSelectedRange(NSRange(location: start, length: 0))
+    }
+
     override func mouseDown(with event: NSEvent) {
         let point = convert(event.locationInWindow, from: nil)
         if handleMentionClick(at: point) { return }

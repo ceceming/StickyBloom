@@ -28,10 +28,10 @@ struct StickyView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
-                .fill(.regularMaterial)
+                .fill(.ultraThinMaterial)
 
             RoundedRectangle(cornerRadius: 16)
-                .fill(backgroundColor.opacity(0.55))
+                .fill(backgroundColor.opacity(0.40))
 
             VStack(spacing: 0) {
                 // Header (drag handle + close)

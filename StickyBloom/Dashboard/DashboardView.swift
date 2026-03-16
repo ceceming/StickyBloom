@@ -48,14 +48,7 @@ struct DashboardView: View {
                 // Plant animation
                 PlantAnimationView()
                     .frame(height: 200)
-
-                Divider().opacity(0.3)
-
-                // Location
-                LocationView(
-                    locationService: locationService,
-                    secondTimezoneID: appState.dashboardSettings.secondTimezoneIdentifier
-                )
+                    .padding(.top, -10)
 
                 Divider().opacity(0.3)
 

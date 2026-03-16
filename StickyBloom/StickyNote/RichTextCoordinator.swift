@@ -9,10 +9,20 @@ final class RichTextCoordinator: NSObject, NSTextViewDelegate, NSTextStorageDele
     weak var textView: MentionAwareTextView?
     private let mentionPopover = MentionPopoverController()
     private var isApplyingMentions = false
+    var isUserEditing = false
 
     // MARK: - NSTextViewDelegate
 
+    func textDidBeginEditing(_ notification: Notification) {
+        isUserEditing = true
+    }
+
+    func textDidEndEditing(_ notification: Notification) {
+        isUserEditing = false
+    }
+
     func textDidChange(_ notification: Notification) {
+        isUserEditing = true
         guard let tv = notification.object as? NSTextView else { return }
         onTextChange?(tv.attributedString())
         checkForMentionAutocomplete(in: tv)
@@ -29,20 +39,33 @@ final class RichTextCoordinator: NSObject, NSTextViewDelegate, NSTextStorageDele
         guard !isApplyingMentions,
               editedMask.contains(.editedCharacters),
               let appState else { return }
+        applyMentionAttributes(to: textStorage, appState: appState)
+    }
 
+    private func applyMentionAttributes(to textStorage: NSTextStorage, appState: AppState) {
         isApplyingMentions = true
         defer { isApplyingMentions = false }
 
         let fullText = textStorage.string
         let matches = MentionParser.findMatches(in: fullText, stickies: appState.stickies)
-
-        // Remove existing mention attributes
         let fullRange = NSRange(location: 0, length: textStorage.length)
-        textStorage.removeAttribute(.stickyBloomMentionID, range: fullRange)
-        textStorage.removeAttribute(.foregroundColor, range: fullRange)
-        textStorage.removeAttribute(.underlineStyle, range: fullRange)
 
-        // Apply mention styling
+        // Collect only ranges that currently carry mention styling — never touch
+        // table-cell content or unrelated text.
+        var oldMentionRanges: [NSRange] = []
+        textStorage.enumerateAttribute(.stickyBloomMentionID, in: fullRange, options: []) { value, range, _ in
+            if value != nil { oldMentionRanges.append(range) }
+        }
+
+        // Strip old mention styling only from ranges that actually had it —
+        // avoids invalidating the full layout (critical for table cells).
+        for range in oldMentionRanges {
+            textStorage.removeAttribute(.stickyBloomMentionID, range: range)
+            textStorage.removeAttribute(.foregroundColor, range: range)
+            textStorage.removeAttribute(.underlineStyle, range: range)
+        }
+
+        // Apply new mention styling
         for match in matches {
             guard match.range.upperBound <= textStorage.length else { continue }
             textStorage.addAttribute(.stickyBloomMentionID, value: match.stickyID.uuidString, range: match.range)

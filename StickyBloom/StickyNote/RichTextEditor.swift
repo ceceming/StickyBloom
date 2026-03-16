@@ -85,8 +85,9 @@ struct RichTextEditor: NSViewRepresentable {
 
     func updateNSView(_ scrollView: NSScrollView, context: Context) {
         guard let textView = scrollView.documentView as? NSTextView else { return }
-        // Only update if content actually changed externally
-        if textView.attributedString() != attributedText && textView.window?.firstResponder !== textView {
+        // Never overwrite while the user is actively editing — the coordinator
+        // tracks this explicitly so it works correctly on nonactivatingPanel too.
+        if !context.coordinator.isUserEditing && textView.attributedString() != attributedText {
             textView.textStorage?.setAttributedString(attributedText)
         }
         context.coordinator.appState = appState

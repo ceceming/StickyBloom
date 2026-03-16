@@ -3,8 +3,8 @@ import SwiftUI
 
 final class DashboardPanel: NSPanel {
     private var hostingView: NSHostingView<DashboardView>?
-    private static let collapsedHeight: CGFloat = 860
-    private static let settingsHeight: CGFloat = 180
+    private static let collapsedHeight: CGFloat = 720
+    private static let settingsHeight: CGFloat = 130
 
     init(appState: AppState) {
         var savedFrame = appState.dashboardSettings.frame.cgRect
@@ -55,7 +55,13 @@ final class DashboardPanel: NSPanel {
     @objc private func frameDidChange() {
         guard let appState else { return }
         Task { @MainActor in
-            appState.dashboardSettings.frame = CGRectCodable(self.frame)
+            // Always save as if collapsed so origin.y doesn't drift when
+            // frameDidChange fires mid-animation (settings expand/collapse).
+            var normalizedFrame = self.frame
+            let excess = normalizedFrame.size.height - DashboardPanel.collapsedHeight
+            normalizedFrame.origin.y += excess
+            normalizedFrame.size.height = DashboardPanel.collapsedHeight
+            appState.dashboardSettings.frame = CGRectCodable(normalizedFrame)
         }
     }
 
