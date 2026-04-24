@@ -39,8 +39,12 @@ final class PersistenceService {
     }
 
     func saveStickies(_ stickies: [StickyNoteModel]) {
-        guard let data = try? JSONEncoder().encode(stickies) else { return }
-        try? data.write(to: stickiesURL, options: .atomic)
+        do {
+            let data = try JSONEncoder().encode(stickies)
+            try data.write(to: stickiesURL, options: .atomic)
+        } catch {
+            NSLog("StickyBloom: failed to save stickies.json: \(error)")
+        }
     }
 
     func loadDashboardSettings() -> DashboardSettingsModel {
@@ -49,8 +53,12 @@ final class PersistenceService {
     }
 
     func saveDashboardSettings(_ settings: DashboardSettingsModel) {
-        guard let data = try? JSONEncoder().encode(settings) else { return }
-        try? data.write(to: dashboardURL, options: .atomic)
+        do {
+            let data = try JSONEncoder().encode(settings)
+            try data.write(to: dashboardURL, options: .atomic)
+        } catch {
+            NSLog("StickyBloom: failed to save dashboard.json: \(error)")
+        }
     }
 
     func loadProjects() -> [ProjectModel] {
@@ -59,7 +67,11 @@ final class PersistenceService {
     }
 
     func saveProjects(_ projects: [ProjectModel]) {
-        guard let data = try? JSONEncoder().encode(projects) else { return }
-        try? data.write(to: projectsURL, options: .atomic)
+        do {
+            let data = try JSONEncoder().encode(projects)
+            try data.write(to: projectsURL, options: .atomic)
+        } catch {
+            NSLog("StickyBloom: failed to save projects.json: \(error)")
+        }
     }
 }

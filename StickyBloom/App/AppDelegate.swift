@@ -26,6 +26,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
+    func applicationWillTerminate(_ notification: Notification) {
+        // Flush any pending debounced JSON saves and ensure .txt files are
+        // current before the process exits — otherwise edits in the last
+        // ~500ms of activity would be lost.
+        appState.saveAll()
+        TextFileSyncService.shared.sync(stickies: appState.stickies)
+    }
+
     // MARK: - Menu Bar
 
     private func setupMenuBar() {

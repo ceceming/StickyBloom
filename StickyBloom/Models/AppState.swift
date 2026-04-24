@@ -23,8 +23,9 @@ final class AppState: ObservableObject {
     }
 
     private func setupAutoSave() {
+        // Synchronous saves on every change — no debounce window means a
+        // crash or force-quit cannot lose in-flight edits.
         $stickies
-            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
             .sink { [weak self] stickies in
                 self?.persistence.saveStickies(stickies)
                 TextFileSyncService.shared.sync(stickies: stickies)
@@ -32,14 +33,12 @@ final class AppState: ObservableObject {
             .store(in: &cancellables)
 
         $dashboardSettings
-            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
             .sink { [weak self] settings in
                 self?.persistence.saveDashboardSettings(settings)
             }
             .store(in: &cancellables)
 
         $projects
-            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
             .sink { [weak self] projects in
                 self?.persistence.saveProjects(projects)
             }

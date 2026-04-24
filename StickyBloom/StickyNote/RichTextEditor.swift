@@ -65,12 +65,12 @@ struct RichTextEditor: NSViewRepresentable {
             }
         }
 
-        // Wire up text change callback to update the binding
+        // Wire up text change callback to update the binding.
+        // textDidChange is delivered on the main thread, so update directly —
+        // a main.async hop here would add a runloop tick of save latency.
         let binding = _attributedText
         context.coordinator.onTextChange = { attributed in
-            DispatchQueue.main.async {
-                binding.wrappedValue = attributed
-            }
+            binding.wrappedValue = attributed
         }
 
         scrollView.documentView = textView
