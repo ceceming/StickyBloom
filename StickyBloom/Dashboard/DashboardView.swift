@@ -28,6 +28,15 @@ struct DashboardView: View {
                         .foregroundStyle(.secondary)
                     Spacer()
                     Button {
+                        NSApp.terminate(nil)
+                    } label: {
+                        Image(systemName: "xmark.circle")
+                            .font(.system(size: 14))
+                    }
+                    .buttonStyle(.plain)
+                    .foregroundStyle(.secondary)
+                    .help("Quit StickyBloom")
+                    Button {
                         showSettings.toggle()
                         onSettingsToggled?(showSettings)
                     } label: {

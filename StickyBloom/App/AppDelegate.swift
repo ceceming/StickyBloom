@@ -18,7 +18,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         setupMenuBar()
 
         // Activate app
-        NSApp.setActivationPolicy(.accessory)
+        NSApp.setActivationPolicy(.regular)
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
