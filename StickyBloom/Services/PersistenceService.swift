@@ -9,6 +9,24 @@ final class PersistenceService {
         let appSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
         baseURL = appSupport.appendingPathComponent("StickyBloom", isDirectory: true)
         try? FileManager.default.createDirectory(at: baseURL, withIntermediateDirectories: true)
+        migrateFromSandboxContainerIfNeeded()
+    }
+
+    private func migrateFromSandboxContainerIfNeeded() {
+        let fm = FileManager.default
+        guard !fm.fileExists(atPath: stickiesURL.path) else { return }
+
+        let home = fm.homeDirectoryForCurrentUser
+        let containerBase = home
+            .appendingPathComponent("Library/Containers/com.ecemozturk.StickyBloom/Data/Library/Application Support/StickyBloom", isDirectory: true)
+
+        for filename in ["stickies.json", "dashboard.json", "projects.json"] {
+            let source = containerBase.appendingPathComponent(filename)
+            let destination = baseURL.appendingPathComponent(filename)
+            guard fm.fileExists(atPath: source.path),
+                  !fm.fileExists(atPath: destination.path) else { continue }
+            try? fm.copyItem(at: source, to: destination)
+        }
     }
 
     private var stickiesURL: URL { baseURL.appendingPathComponent("stickies.json") }

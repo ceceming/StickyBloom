@@ -12,6 +12,7 @@ final class AppState: ObservableObject {
 
     init() {
         load()
+        TextFileSyncService.shared.sync(stickies: stickies)
         setupAutoSave()
     }
 
@@ -26,6 +27,7 @@ final class AppState: ObservableObject {
             .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
             .sink { [weak self] stickies in
                 self?.persistence.saveStickies(stickies)
+                TextFileSyncService.shared.sync(stickies: stickies)
             }
             .store(in: &cancellables)
 
