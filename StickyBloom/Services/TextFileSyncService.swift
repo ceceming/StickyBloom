@@ -63,7 +63,7 @@ final class TextFileSyncService {
 
     private func filename(for sticky: StickyNoteModel) -> String {
         let shortID = String(sticky.id.uuidString.prefix(4))
-        let sanitized = sanitize(sticky.title)
+        let sanitized = sanitize(sticky.defaultTitle)
         let base = sanitized.isEmpty ? "Untitled" : sanitized
         return "\(base)-\(shortID).txt"
     }

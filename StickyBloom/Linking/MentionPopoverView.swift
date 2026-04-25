@@ -15,7 +15,7 @@ struct MentionPopoverView: View {
                         Circle()
                             .fill(Color(NSColor(hex: sticky.backgroundColor) ?? .systemYellow))
                             .frame(width: 10, height: 10)
-                        Text(sticky.title.isEmpty ? "Untitled" : sticky.title)
+                        Text(sticky.displayTitle)
                             .font(.system(size: 13))
                         Spacer()
                     }

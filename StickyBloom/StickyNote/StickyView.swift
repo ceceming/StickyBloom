@@ -14,7 +14,6 @@ struct StickyView: View {
     let windowProxy: WindowProxy
 
     @State private var attributedText: NSAttributedString = NSAttributedString()
-    @State private var title: String = ""
 
     private var model: StickyNoteModel? {
         appState.sticky(for: stickyID)
@@ -47,23 +46,6 @@ struct StickyView: View {
 
                 Divider().opacity(0.3)
 
-                // Title field — just above the note area
-                TextField("Title...", text: $title)
-                    .textFieldStyle(.plain)
-                    .font(.system(size: 12, weight: .semibold, design: .rounded))
-                    .foregroundStyle(.primary)
-                    .padding(.horizontal, 12)
-                    .padding(.top, 8)
-                    .padding(.bottom, 4)
-                    .onSubmit {
-                        if let tv = windowProxy.window?.contentView?.findSubview(ofType: MentionAwareTextView.self) {
-                            windowProxy.window?.makeFirstResponder(tv)
-                        }
-                    }
-                    .onChange(of: title) { newTitle in
-                        updateModel { $0.title = newTitle }
-                    }
-
                 // Rich text editor
                 RichTextEditor(
                     attributedText: $attributedText,
@@ -75,6 +57,11 @@ struct StickyView: View {
                 )
                 .onChange(of: attributedText) { newText in
                     guard let rtf = newText.rtfData else { return }
+                    // Skip the load-time onChange (and any other no-op): only
+                    // touch modifiedAt when bytes actually differ.
+                    if let current = appState.sticky(for: stickyID), current.rtfData == rtf {
+                        return
+                    }
                     updateModel {
                         $0.rtfData = rtf
                         $0.modifiedAt = Date()
@@ -94,7 +81,6 @@ struct StickyView: View {
         .onAppear {
             let m = appState.sticky(for: stickyID)
             if let m {
-                title = m.title
                 if !m.rtfData.isEmpty,
                    let attrStr = NSAttributedString(rtfData: m.rtfData) {
                     attributedText = attrStr

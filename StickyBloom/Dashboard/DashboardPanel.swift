@@ -6,6 +6,12 @@ final class DashboardPanel: NSPanel {
     private static let collapsedHeight: CGFloat = 720
     private static let settingsHeight: CGFloat = 130
 
+    // nonactivatingPanel defaults canBecomeKey to false, which blocks every
+    // TextField in the panel from receiving keystrokes. Override so inline
+    // rename (and any future input) actually works.
+    override var canBecomeKey: Bool { true }
+    override var canBecomeMain: Bool { true }
+
     init(appState: AppState) {
         var savedFrame = appState.dashboardSettings.frame.cgRect
         // Always start at collapsed height so saved expanded-state doesn't persist

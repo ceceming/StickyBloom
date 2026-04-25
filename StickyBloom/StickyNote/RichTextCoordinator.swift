@@ -97,8 +97,8 @@ final class RichTextCoordinator: NSObject, NSTextViewDelegate, NSTextStorageDele
 
         if let partial = MentionParser.partialMention(in: text, at: location) {
             let candidates = appState.stickies.filter {
-                !$0.title.isEmpty &&
-                $0.title.lowercased().hasPrefix(partial.lowercased())
+                !$0.displayTitle.isEmpty &&
+                $0.displayTitle.lowercased().hasPrefix(partial.lowercased())
             }
 
             if candidates.isEmpty {
@@ -131,7 +131,7 @@ final class RichTextCoordinator: NSObject, NSTextViewDelegate, NSTextStorageDele
         // Replace @partial with @Title
         let replaceRange = NSRange(location: location - partialText.count - 1, length: partialText.count + 1)
         guard replaceRange.location >= 0 && replaceRange.upperBound <= storage.length else { return }
-        let replacement = "@\(sticky.title)"
+        let replacement = "@\(sticky.displayTitle)"
         storage.replaceCharacters(in: replaceRange, with: replacement)
         textView.setSelectedRange(NSRange(location: replaceRange.location + replacement.count, length: 0))
     }

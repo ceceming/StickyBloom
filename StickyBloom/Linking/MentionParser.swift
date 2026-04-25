@@ -26,11 +26,11 @@ struct MentionParser {
 
             // Case-insensitive title match
             if let sticky = stickies.first(where: {
-                $0.title.lowercased() == mentionTitle.lowercased() && !$0.title.isEmpty
+                $0.displayTitle.lowercased() == mentionTitle.lowercased() && !$0.displayTitle.isEmpty
             }) {
                 matches.append(MentionMatch(
                     range: result.range,
-                    title: sticky.title,
+                    title: sticky.displayTitle,
                     stickyID: sticky.id
                 ))
             }
