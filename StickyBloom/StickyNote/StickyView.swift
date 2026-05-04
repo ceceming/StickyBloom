@@ -46,7 +46,9 @@ struct StickyView: View {
 
                 Divider().opacity(0.3)
 
-                // Rich text editor
+                // Rich text editor — persists to AppState synchronously inside
+                // textDidChange (see RichTextEditor.onTextChange), so no
+                // SwiftUI .onChange hop is needed here.
                 RichTextEditor(
                     attributedText: $attributedText,
                     appState: appState,
@@ -55,18 +57,6 @@ struct StickyView: View {
                         windowManager.bringToFront(stickyID: uuid)
                     }
                 )
-                .onChange(of: attributedText) { newText in
-                    guard let rtf = newText.rtfData else { return }
-                    // Skip the load-time onChange (and any other no-op): only
-                    // touch modifiedAt when bytes actually differ.
-                    if let current = appState.sticky(for: stickyID), current.rtfData == rtf {
-                        return
-                    }
-                    updateModel {
-                        $0.rtfData = rtf
-                        $0.modifiedAt = Date()
-                    }
-                }
 
                 // Corner resize handles
                 CornerResizeHandlesView(windowProxy: windowProxy)

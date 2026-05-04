@@ -27,9 +27,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ notification: Notification) {
-        // Flush any pending debounced JSON saves and ensure .txt files are
-        // current before the process exits — otherwise edits in the last
-        // ~500ms of activity would be lost.
+        // Belt-and-suspenders flush. Saves are already synchronous on every
+        // edit, so this only catches the unlikely case of an in-flight
+        // mutation that never reached the Combine sink before quit.
         appState.saveAll()
         TextFileSyncService.shared.sync(stickies: appState.stickies)
     }

@@ -65,12 +65,21 @@ struct RichTextEditor: NSViewRepresentable {
             }
         }
 
-        // Wire up text change callback to update the binding.
-        // textDidChange is delivered on the main thread, so update directly —
-        // a main.async hop here would add a runloop tick of save latency.
+        // Persist on every keystroke synchronously, on the same call stack
+        // as NSTextView.textDidChange. Going through SwiftUI @State + .onChange
+        // would defer the save by a runloop tick — a SIGKILL inside that
+        // window would lose the character.
         let binding = _attributedText
-        context.coordinator.onTextChange = { attributed in
+        let stickyIDValue = stickyID
+        context.coordinator.onTextChange = { [weak appState] attributed in
             binding.wrappedValue = attributed
+            guard let appState, let rtf = attributed.rtfData else { return }
+            if var current = appState.sticky(for: stickyIDValue) {
+                if current.rtfData == rtf { return }
+                current.rtfData = rtf
+                current.modifiedAt = Date()
+                appState.updateSticky(current)
+            }
         }
 
         scrollView.documentView = textView

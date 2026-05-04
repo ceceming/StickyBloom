@@ -87,7 +87,7 @@ final class ColorPickerDialogWindowController: NSWindowController {
             Task { @MainActor in
                 let model = StickyNoteModel(backgroundColor: hex)
                 appState.addSticky(model)
-                windowManager.open(model: model, appState: appState)
+                windowManager.open(model: model, appState: appState, autoFocus: true)
                 window?.close()
                 onDismiss?()
             }
