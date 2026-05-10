@@ -4,17 +4,23 @@ import Combine
 
 @MainActor
 final class LocationService: NSObject, ObservableObject {
-    @Published var cityName: String = "Unknown"
+    @Published var cityName: String?
+    @Published var detectedTimeZoneIdentifier: String?
     @Published var authorizationStatus: CLAuthorizationStatus = .notDetermined
 
     private let manager = CLLocationManager()
     private let geocoder = CLGeocoder()
     private var lastLocation: CLLocation?
 
+    private static let cityKey = "LocationService.cachedCity"
+    private static let tzKey = "LocationService.cachedTimeZone"
+
     override init() {
         super.init()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyKilometer
+        cityName = UserDefaults.standard.string(forKey: Self.cityKey)
+        detectedTimeZoneIdentifier = UserDefaults.standard.string(forKey: Self.tzKey)
     }
 
     func requestAuthorization() {
@@ -33,9 +39,17 @@ final class LocationService: NSObject, ObservableObject {
     private func reverseGeocode(_ location: CLLocation) {
         geocoder.reverseGeocodeLocation(location) { [weak self] placemarks, _ in
             guard let self else { return }
-            if let city = placemarks?.first?.locality {
-                Task { @MainActor in
+            let placemark = placemarks?.first
+            let city = placemark?.locality
+            let tzID = placemark?.timeZone?.identifier
+            Task { @MainActor in
+                if let city {
                     self.cityName = city
+                    UserDefaults.standard.set(city, forKey: Self.cityKey)
+                }
+                if let tzID {
+                    self.detectedTimeZoneIdentifier = tzID
+                    UserDefaults.standard.set(tzID, forKey: Self.tzKey)
                 }
             }
         }

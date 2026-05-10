@@ -7,100 +7,100 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ACA0B0EFA75744DDB09A6BBC = {isa = PBXBuildFile; fileRef = 22C07205DD8C4BB5B1A3C004; };
-		72B0487A1032489DA9884344 = {isa = PBXBuildFile; fileRef = EA391D7C21D34D5F96010897; };
-		4E4E58D8B63A400EBF6B3911 = {isa = PBXBuildFile; fileRef = 384A3AF39EE14F7B876EE1DD; };
-		759310C3F5FD4E568581D7D8 = {isa = PBXBuildFile; fileRef = AC3008E5876841248D26A792; };
-		DF11DF41D8ED41F8BDE51963 = {isa = PBXBuildFile; fileRef = 9BB1A97F0C93488BA6F018B5; };
-		D58C072435624568A34F5657 = {isa = PBXBuildFile; fileRef = 7E1AC73F79D94FCF9855E1D2; };
-		A6C23295C51342F3BEFEC03C = {isa = PBXBuildFile; fileRef = 707C2E1A3EFF40A9BBB056D2; };
-		490A0E3385F2423390499004 = {isa = PBXBuildFile; fileRef = 23DF368842704A92AC1812C8; };
-		3FA28DF1E47B476EB8E5B29B = {isa = PBXBuildFile; fileRef = B8B77A77F24D4552BC270282; };
-		13EAC84078E340B69EE9CD4E = {isa = PBXBuildFile; fileRef = A7A5A124BFFA41F7BEC32E97; };
-		F42FCAA5B1FE45F791D2DD7F = {isa = PBXBuildFile; fileRef = 4894BBB19A214B81A1510E4D; };
-		12BDC4EA534A43599E5D1249 = {isa = PBXBuildFile; fileRef = A114B3012FC1468FB20B2790; };
-		3D574C52871D4CF5B754EC29 = {isa = PBXBuildFile; fileRef = 6E3C40D598874B129B80D6F7; };
-		C9EC211A186C493890A5C199 = {isa = PBXBuildFile; fileRef = F0BCA021E83E4DA4B3EEE153; };
-		E5D53EF6893448B78B5F2543 = {isa = PBXBuildFile; fileRef = 8603D5BF656B46969887ACB0; };
-		F7B4AA5E247C4EAD9061FF4F = {isa = PBXBuildFile; fileRef = EC0FC89D1EFF470587991E16; };
-		2AF6331AE39448298A255EA8 = {isa = PBXBuildFile; fileRef = 31ACE4B6622143B69B27F50A; };
-		3C8E37757F444A9D8D73B974 = {isa = PBXBuildFile; fileRef = 84DC69AFDBD14C798670629E; };
-		5473D5C60A7D48ECBF2E92E3 = {isa = PBXBuildFile; fileRef = A323220BC4F54E0C96BE5A6D; };
-		EFA1BAA8F36A4C7B9C2EE629 = {isa = PBXBuildFile; fileRef = D8147E2F998E4B098EE24847; };
-		CC1CB0F5DBCA447B81107477 = {isa = PBXBuildFile; fileRef = 085F2BB86E3A4B16A79DB8CE; };
-		3CB652E4C8DD478FB781DD25 = {isa = PBXBuildFile; fileRef = 444CE4D9A0BB481CAAE29D30; };
-		F7F770F00817450F950FD036 = {isa = PBXBuildFile; fileRef = 3AE6D1C458B64036B0375494; };
-		F164E118E403480A9AAB98B9 = {isa = PBXBuildFile; fileRef = 367A26929B844B629803A40A; };
-		8B546CFA778C43C7A680EF54 = {isa = PBXBuildFile; fileRef = 229766AC20EE43009B6DAB28; };
-		8DB1FB1E78344D2B948AC250 = {isa = PBXBuildFile; fileRef = CAFA590D06D34F3E97532361; };
-		8D695F82055B45ADB090AC14 = {isa = PBXBuildFile; fileRef = 5E025FDA4C234B388B9D4E9B; };
-		86E4747B8D9A4E9F827669AC = {isa = PBXBuildFile; fileRef = 7BD3D44E7EAB44C1B9DCAACE; };
-		C2B8E41662184A578A0FA561 = {isa = PBXBuildFile; fileRef = 0CF1C941518A4E5A8C274605; };
-		C0D0E5262B1249339D869495 = {isa = PBXBuildFile; fileRef = 97863192DF2A41A298597E20; };
-		9D46E2484F734638A552302D = {isa = PBXBuildFile; fileRef = B5DE180F198A44948CA3EA0E; };
-		81F459CC78C74218809B57D7 = {isa = PBXBuildFile; fileRef = 1EBAFF4792B942ADA1F63357; };
-		4E3B3957F08846FDBAA40C06 = {isa = PBXBuildFile; fileRef = 2BD868F381ED4109A6413568; };
-		216C6FC3388C4C6095007CD7 = {isa = PBXBuildFile; fileRef = A22E50E25A8D4F64B12B0CC2; };
-		2E87DC58A78645EBA32CE4FD = {isa = PBXBuildFile; fileRef = 67AABBC79E1E48FE84239851; };
-		AFB67B3D4A414C518BF51445 = {isa = PBXBuildFile; fileRef = 5E51ECEF18304B87B01F5C85; };
-		F26274265D47432BA97FA772 = {isa = PBXBuildFile; fileRef = ECDE2F2F8A9A4C2AB066B96A; };
-		C58FC47F2274468F97FF22FD = {isa = PBXBuildFile; fileRef = B722574230EA495C951D370F; };
-		F48B724C7B2943E581BA741D = {isa = PBXBuildFile; fileRef = 0F0DBC4D14F546B884D13ECF; };
-		6405FEB4BC724FBE9625E75B = {isa = PBXBuildFile; fileRef = 68F90B5539A044DE83819FBE; };
-		795462FF9F0E4A6B9AA3AF6D = {isa = PBXBuildFile; fileRef = 633E63C9EA9B4C4BA3259808; };
-		341A319AE3E04DC2A8B9FC18 = {isa = PBXBuildFile; fileRef = 345424255B8A41B494159FF5; };
+		F741B85F0DD34A7DA7BA68BB = {isa = PBXBuildFile; fileRef = D98B7A2F0DCF498DACA5DB90; };
+		B22E51A6BBFE4D7A88488277 = {isa = PBXBuildFile; fileRef = DBF3AD87BCE145148261C8B3; };
+		A490B2BF13604BCEB24FEBF5 = {isa = PBXBuildFile; fileRef = 18D82745CA9E49D188E1682C; };
+		EDB093B0805648069A0DDE5F = {isa = PBXBuildFile; fileRef = D65A11565E864ACEA9D67A5C; };
+		F281E20DD99F4E3BA46EC240 = {isa = PBXBuildFile; fileRef = 2CEF0F41CB6749C8A814C7FA; };
+		CB5275DFD18F4D47817D5251 = {isa = PBXBuildFile; fileRef = BCBB8453FDB4467792720DE4; };
+		EF725772E0A64F38AD8B7F66 = {isa = PBXBuildFile; fileRef = 408B6E2FFDC04587AD5C960F; };
+		DB0C2E0D3B744C7EBFEFA74A = {isa = PBXBuildFile; fileRef = 421A19137A684328BC7808DB; };
+		07BC8361AFF14C6AA072FE5B = {isa = PBXBuildFile; fileRef = 959A6753B756481D8966166F; };
+		B80DF7EF797F4BBF93512ECD = {isa = PBXBuildFile; fileRef = F9AC14A2679D4564AC778678; };
+		DF29197084944B80A0D0074A = {isa = PBXBuildFile; fileRef = DDCDBAEE49C542BA9BE2B02F; };
+		0A41140993A7439984FCFCA8 = {isa = PBXBuildFile; fileRef = D01BDB4D2349464197328F1B; };
+		D57B0A1781A246DAA826FB2E = {isa = PBXBuildFile; fileRef = 6E035A86840847D095F25975; };
+		A68F750FFFC749208E85D649 = {isa = PBXBuildFile; fileRef = 1780CA90A5584CE692768E6B; };
+		A346C1D286D24916A487FCD1 = {isa = PBXBuildFile; fileRef = F1666DDD5332448D806A0A09; };
+		AE61F59DA2AD4A358793A80B = {isa = PBXBuildFile; fileRef = 3577E1D6031049219D88746D; };
+		2022E7A020594EB29B1AEF9B = {isa = PBXBuildFile; fileRef = 5150949967A8436FB4D685E1; };
+		FD248560FBA94EE3BFF5087F = {isa = PBXBuildFile; fileRef = 94FE736230684ABFBDE7B93C; };
+		790BE735CD6C41F0B2FB50E7 = {isa = PBXBuildFile; fileRef = 79B8250448EC42D48191A933; };
+		3263B75DB906442DBF81CF5E = {isa = PBXBuildFile; fileRef = D9CCEBB3A73B4EDB8167C861; };
+		FB15FABB560448EFA65CF796 = {isa = PBXBuildFile; fileRef = 49386E228D8E4934AC27D938; };
+		28951ED4DB314087B4ECE701 = {isa = PBXBuildFile; fileRef = 5E3C44A0C0B743A4885E2948; };
+		6A6699C3E27047B09E80A9EF = {isa = PBXBuildFile; fileRef = CD4D559FE3594935B3FF1F81; };
+		C18A00A2A20841F8AF3BB007 = {isa = PBXBuildFile; fileRef = 5947C7FEEF064488B6AA78B2; };
+		7A362BD0BD8B456E8F40BB48 = {isa = PBXBuildFile; fileRef = 4677BA60D36D4FC89AE9F403; };
+		BC2C3496DA074D3E94967FA3 = {isa = PBXBuildFile; fileRef = 4876CADB52F54964A024EE36; };
+		E87DE262B616463084F5B3AF = {isa = PBXBuildFile; fileRef = 0929BDCA9C9C4B49A82EDAC4; };
+		671FB522D81542AB95CEB97B = {isa = PBXBuildFile; fileRef = 9FDABF5CB8C44010A4A72C69; };
+		DEBFF8F75FDC47AA81D2C1E4 = {isa = PBXBuildFile; fileRef = 70634D94062A4EB9B9BD378F; };
+		3183D3EA4D99441993FFF8CF = {isa = PBXBuildFile; fileRef = 791C32B6584B4B82AD1F2B81; };
+		6AF6179FD5734C7C87519FF0 = {isa = PBXBuildFile; fileRef = FFFEAD54823F4139847AFB3A; };
+		98F49F2AD2DF4B13897DBCF2 = {isa = PBXBuildFile; fileRef = 650BEF7523F7429AA999E37B; };
+		FACFD12B43AA4C7D95AC145E = {isa = PBXBuildFile; fileRef = 70E023C362D54129A1BA8E4F; };
+		071A1B9115AB49DDAFB6E6DD = {isa = PBXBuildFile; fileRef = FC7123D02D1D4585A12399AF; };
+		0723A739DF814232A70C8C6A = {isa = PBXBuildFile; fileRef = AD63BF76EE1A4AAD9369F926; };
+		9279DB5208804B919076B4DF = {isa = PBXBuildFile; fileRef = 350CBF96FAC54B8AAE3151EA; };
+		CF080FC682F44A1AA899CEBB = {isa = PBXBuildFile; fileRef = 063EEFF6759E45869694123F; };
+		FE709D2EE52B4B6BA1A05B67 = {isa = PBXBuildFile; fileRef = 3987E2C55DDF4FFB996BB3D9; };
+		CBF9AF8870B848699B9A4B3F = {isa = PBXBuildFile; fileRef = 2C822E0CFA934274A121FAFF; };
+		54E6A5A718DD42379A41CE5F = {isa = PBXBuildFile; fileRef = 727472321DA243859593EFE9; };
+		1612FF53728640B49A58B2DB = {isa = PBXBuildFile; fileRef = CF5770CA004A487FAF4182EA; };
+		3B5977A0C26140F495EECD68 = {isa = PBXBuildFile; fileRef = 22D2EDC8B4F84B1C9E50AD32; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		22C07205DD8C4BB5B1A3C004 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppDelegate.swift"; path = "App/AppDelegate.swift"; sourceTree = "<group>"; };
-		EA391D7C21D34D5F96010897 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyBloomApp.swift"; path = "App/StickyBloomApp.swift"; sourceTree = "<group>"; };
-		384A3AF39EE14F7B876EE1DD = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlantAnimationController.swift"; path = "PlantAnimation/PlantAnimationController.swift"; sourceTree = "<group>"; };
-		AC3008E5876841248D26A792 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlantShape.swift"; path = "PlantAnimation/PlantShape.swift"; sourceTree = "<group>"; };
-		9BB1A97F0C93488BA6F018B5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlantStage.swift"; path = "PlantAnimation/PlantStage.swift"; sourceTree = "<group>"; };
-		7E1AC73F79D94FCF9855E1D2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppState.swift"; path = "Models/AppState.swift"; sourceTree = "<group>"; };
-		707C2E1A3EFF40A9BBB056D2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DashboardSettingsModel.swift"; path = "Models/DashboardSettingsModel.swift"; sourceTree = "<group>"; };
-		23DF368842704A92AC1812C8 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MentionLink.swift"; path = "Models/MentionLink.swift"; sourceTree = "<group>"; };
-		B8B77A77F24D4552BC270282 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProjectModel.swift"; path = "Models/ProjectModel.swift"; sourceTree = "<group>"; };
-		A7A5A124BFFA41F7BEC32E97 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyNoteModel.swift"; path = "Models/StickyNoteModel.swift"; sourceTree = "<group>"; };
-		4894BBB19A214B81A1510E4D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyTransfer.swift"; path = "Models/StickyTransfer.swift"; sourceTree = "<group>"; };
-		A114B3012FC1468FB20B2790 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AddProjectWindowController.swift"; path = "Dashboard/AddProjectWindowController.swift"; sourceTree = "<group>"; };
-		6E3C40D598874B129B80D6F7 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ClockView.swift"; path = "Dashboard/ClockView.swift"; sourceTree = "<group>"; };
-		F0BCA021E83E4DA4B3EEE153 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DashboardPanel.swift"; path = "Dashboard/DashboardPanel.swift"; sourceTree = "<group>"; };
-		8603D5BF656B46969887ACB0 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DashboardSettingsView.swift"; path = "Dashboard/DashboardSettingsView.swift"; sourceTree = "<group>"; };
-		EC0FC89D1EFF470587991E16 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DashboardView.swift"; path = "Dashboard/DashboardView.swift"; sourceTree = "<group>"; };
-		31ACE4B6622143B69B27F50A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LocationView.swift"; path = "Dashboard/LocationView.swift"; sourceTree = "<group>"; };
-		84DC69AFDBD14C798670629E = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NoteRowView.swift"; path = "Dashboard/NoteRowView.swift"; sourceTree = "<group>"; };
-		A323220BC4F54E0C96BE5A6D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NotesListView.swift"; path = "Dashboard/NotesListView.swift"; sourceTree = "<group>"; };
-		D8147E2F998E4B098EE24847 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlantAnimationView.swift"; path = "Dashboard/PlantAnimationView.swift"; sourceTree = "<group>"; };
-		085F2BB86E3A4B16A79DB8CE = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProjectRowView.swift"; path = "Dashboard/ProjectRowView.swift"; sourceTree = "<group>"; };
-		444CE4D9A0BB481CAAE29D30 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SecondTimezonePickerView.swift"; path = "Dashboard/SecondTimezonePickerView.swift"; sourceTree = "<group>"; };
-		3AE6D1C458B64036B0375494 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AttributedString+RTF.swift"; path = "Utilities/AttributedString+RTF.swift"; sourceTree = "<group>"; };
-		367A26929B844B629803A40A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSColor+Hex.swift"; path = "Utilities/NSColor+Hex.swift"; sourceTree = "<group>"; };
-		229766AC20EE43009B6DAB28 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TimeZone+Display.swift"; path = "Utilities/TimeZone+Display.swift"; sourceTree = "<group>"; };
-		CAFA590D06D34F3E97532361 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TitleGenerator.swift"; path = "Utilities/TitleGenerator.swift"; sourceTree = "<group>"; };
-		5E025FDA4C234B388B9D4E9B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LocationService.swift"; path = "Services/LocationService.swift"; sourceTree = "<group>"; };
-		7BD3D44E7EAB44C1B9DCAACE = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PersistenceService.swift"; path = "Services/PersistenceService.swift"; sourceTree = "<group>"; };
-		0CF1C941518A4E5A8C274605 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TextFileSyncService.swift"; path = "Services/TextFileSyncService.swift"; sourceTree = "<group>"; };
-		97863192DF2A41A298597E20 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WindowManager.swift"; path = "Services/WindowManager.swift"; sourceTree = "<group>"; };
-		B5DE180F198A44948CA3EA0E = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MentionParser.swift"; path = "Linking/MentionParser.swift"; sourceTree = "<group>"; };
-		1EBAFF4792B942ADA1F63357 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MentionPopoverView.swift"; path = "Linking/MentionPopoverView.swift"; sourceTree = "<group>"; };
-		2BD868F381ED4109A6413568 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ColorPickerDialogView.swift"; path = "StickyNote/ColorPickerDialogView.swift"; sourceTree = "<group>"; };
-		A22E50E25A8D4F64B12B0CC2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MentionAwareTextView.swift"; path = "StickyNote/MentionAwareTextView.swift"; sourceTree = "<group>"; };
-		67AABBC79E1E48FE84239851 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RichTextCoordinator.swift"; path = "StickyNote/RichTextCoordinator.swift"; sourceTree = "<group>"; };
-		5E51ECEF18304B87B01F5C85 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RichTextEditor.swift"; path = "StickyNote/RichTextEditor.swift"; sourceTree = "<group>"; };
-		ECDE2F2F8A9A4C2AB066B96A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyHeaderView.swift"; path = "StickyNote/StickyHeaderView.swift"; sourceTree = "<group>"; };
-		B722574230EA495C951D370F = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyPanel.swift"; path = "StickyNote/StickyPanel.swift"; sourceTree = "<group>"; };
-		0F0DBC4D14F546B884D13ECF = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyToolbarView.swift"; path = "StickyNote/StickyToolbarView.swift"; sourceTree = "<group>"; };
-		68F90B5539A044DE83819FBE = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyView.swift"; path = "StickyNote/StickyView.swift"; sourceTree = "<group>"; };
-		633E63C9EA9B4C4BA3259808 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyWindowController.swift"; path = "StickyNote/StickyWindowController.swift"; sourceTree = "<group>"; };
-		345424255B8A41B494159FF5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TableInsertView.swift"; path = "StickyNote/TableInsertView.swift"; sourceTree = "<group>"; };
-		1556636C3C0B40D997929349 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
-		BB6A2FDE7F854F71B97B06EB = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "StickyBloom.entitlements"; path = "StickyBloom.entitlements"; sourceTree = "<group>"; };
-		1D1FDB5510794644991ACC7F = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickyBloom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D98B7A2F0DCF498DACA5DB90 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppDelegate.swift"; path = "App/AppDelegate.swift"; sourceTree = "<group>"; };
+		DBF3AD87BCE145148261C8B3 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyBloomApp.swift"; path = "App/StickyBloomApp.swift"; sourceTree = "<group>"; };
+		18D82745CA9E49D188E1682C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlantAnimationController.swift"; path = "PlantAnimation/PlantAnimationController.swift"; sourceTree = "<group>"; };
+		D65A11565E864ACEA9D67A5C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlantShape.swift"; path = "PlantAnimation/PlantShape.swift"; sourceTree = "<group>"; };
+		2CEF0F41CB6749C8A814C7FA = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlantStage.swift"; path = "PlantAnimation/PlantStage.swift"; sourceTree = "<group>"; };
+		BCBB8453FDB4467792720DE4 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppState.swift"; path = "Models/AppState.swift"; sourceTree = "<group>"; };
+		408B6E2FFDC04587AD5C960F = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DashboardSettingsModel.swift"; path = "Models/DashboardSettingsModel.swift"; sourceTree = "<group>"; };
+		421A19137A684328BC7808DB = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MentionLink.swift"; path = "Models/MentionLink.swift"; sourceTree = "<group>"; };
+		959A6753B756481D8966166F = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProjectModel.swift"; path = "Models/ProjectModel.swift"; sourceTree = "<group>"; };
+		F9AC14A2679D4564AC778678 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyNoteModel.swift"; path = "Models/StickyNoteModel.swift"; sourceTree = "<group>"; };
+		DDCDBAEE49C542BA9BE2B02F = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyTransfer.swift"; path = "Models/StickyTransfer.swift"; sourceTree = "<group>"; };
+		D01BDB4D2349464197328F1B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AddProjectWindowController.swift"; path = "Dashboard/AddProjectWindowController.swift"; sourceTree = "<group>"; };
+		6E035A86840847D095F25975 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ClockView.swift"; path = "Dashboard/ClockView.swift"; sourceTree = "<group>"; };
+		1780CA90A5584CE692768E6B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DashboardPanel.swift"; path = "Dashboard/DashboardPanel.swift"; sourceTree = "<group>"; };
+		F1666DDD5332448D806A0A09 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DashboardSettingsView.swift"; path = "Dashboard/DashboardSettingsView.swift"; sourceTree = "<group>"; };
+		3577E1D6031049219D88746D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DashboardView.swift"; path = "Dashboard/DashboardView.swift"; sourceTree = "<group>"; };
+		5150949967A8436FB4D685E1 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NoteRowView.swift"; path = "Dashboard/NoteRowView.swift"; sourceTree = "<group>"; };
+		94FE736230684ABFBDE7B93C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NotesListView.swift"; path = "Dashboard/NotesListView.swift"; sourceTree = "<group>"; };
+		79B8250448EC42D48191A933 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlantAnimationView.swift"; path = "Dashboard/PlantAnimationView.swift"; sourceTree = "<group>"; };
+		D9CCEBB3A73B4EDB8167C861 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProjectRowView.swift"; path = "Dashboard/ProjectRowView.swift"; sourceTree = "<group>"; };
+		49386E228D8E4934AC27D938 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SecondTimezonePickerView.swift"; path = "Dashboard/SecondTimezonePickerView.swift"; sourceTree = "<group>"; };
+		5E3C44A0C0B743A4885E2948 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AttributedString+RTF.swift"; path = "Utilities/AttributedString+RTF.swift"; sourceTree = "<group>"; };
+		CD4D559FE3594935B3FF1F81 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSColor+Hex.swift"; path = "Utilities/NSColor+Hex.swift"; sourceTree = "<group>"; };
+		5947C7FEEF064488B6AA78B2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TimeZone+Display.swift"; path = "Utilities/TimeZone+Display.swift"; sourceTree = "<group>"; };
+		4677BA60D36D4FC89AE9F403 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TitleGenerator.swift"; path = "Utilities/TitleGenerator.swift"; sourceTree = "<group>"; };
+		4876CADB52F54964A024EE36 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LocationService.swift"; path = "Services/LocationService.swift"; sourceTree = "<group>"; };
+		0929BDCA9C9C4B49A82EDAC4 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PersistenceService.swift"; path = "Services/PersistenceService.swift"; sourceTree = "<group>"; };
+		9FDABF5CB8C44010A4A72C69 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TextFileSyncService.swift"; path = "Services/TextFileSyncService.swift"; sourceTree = "<group>"; };
+		70634D94062A4EB9B9BD378F = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WindowManager.swift"; path = "Services/WindowManager.swift"; sourceTree = "<group>"; };
+		791C32B6584B4B82AD1F2B81 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MentionParser.swift"; path = "Linking/MentionParser.swift"; sourceTree = "<group>"; };
+		FFFEAD54823F4139847AFB3A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MentionPopoverView.swift"; path = "Linking/MentionPopoverView.swift"; sourceTree = "<group>"; };
+		650BEF7523F7429AA999E37B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ColorPickerDialogView.swift"; path = "StickyNote/ColorPickerDialogView.swift"; sourceTree = "<group>"; };
+		70E023C362D54129A1BA8E4F = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MentionAwareTextView.swift"; path = "StickyNote/MentionAwareTextView.swift"; sourceTree = "<group>"; };
+		FC7123D02D1D4585A12399AF = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RichTextCoordinator.swift"; path = "StickyNote/RichTextCoordinator.swift"; sourceTree = "<group>"; };
+		AD63BF76EE1A4AAD9369F926 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RichTextEditor.swift"; path = "StickyNote/RichTextEditor.swift"; sourceTree = "<group>"; };
+		350CBF96FAC54B8AAE3151EA = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyHeaderView.swift"; path = "StickyNote/StickyHeaderView.swift"; sourceTree = "<group>"; };
+		063EEFF6759E45869694123F = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyPanel.swift"; path = "StickyNote/StickyPanel.swift"; sourceTree = "<group>"; };
+		3987E2C55DDF4FFB996BB3D9 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyToolbarView.swift"; path = "StickyNote/StickyToolbarView.swift"; sourceTree = "<group>"; };
+		2C822E0CFA934274A121FAFF = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyView.swift"; path = "StickyNote/StickyView.swift"; sourceTree = "<group>"; };
+		727472321DA243859593EFE9 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StickyWindowController.swift"; path = "StickyNote/StickyWindowController.swift"; sourceTree = "<group>"; };
+		CF5770CA004A487FAF4182EA = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TableInsertView.swift"; path = "StickyNote/TableInsertView.swift"; sourceTree = "<group>"; };
+		39769C6741544E94AA018C7E = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+		E336F0F460C54947A8BB1B50 = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "StickyBloom.entitlements"; path = "StickyBloom.entitlements"; sourceTree = "<group>"; };
+		22D2EDC8B4F84B1C9E50AD32 = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Assets.xcassets"; path = "Assets.xcassets"; sourceTree = "<group>"; };
+		D296136A554242E5BF7745D9 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickyBloom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EE9B4BF6DC234A439F934351 = {
+		836E4619E9F1462694ED6223 = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -110,148 +110,148 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		807DE50A78444A80BD487AB8 = {
+		562015E620DF47DE9EBA2320 = {
 			isa = PBXGroup;
 			children = (
-				22C07205DD8C4BB5B1A3C004,
-				EA391D7C21D34D5F96010897,
+				D98B7A2F0DCF498DACA5DB90,
+				DBF3AD87BCE145148261C8B3,
 			);
 			name = "App";
 			sourceTree = "<group>";
 		};
-		1E1CF3057D75474FBEBE2996 = {
+		9E4D3D31FBC04DE784E292BC = {
 			isa = PBXGroup;
 			children = (
-				A114B3012FC1468FB20B2790,
-				6E3C40D598874B129B80D6F7,
-				F0BCA021E83E4DA4B3EEE153,
-				8603D5BF656B46969887ACB0,
-				EC0FC89D1EFF470587991E16,
-				31ACE4B6622143B69B27F50A,
-				84DC69AFDBD14C798670629E,
-				A323220BC4F54E0C96BE5A6D,
-				D8147E2F998E4B098EE24847,
-				085F2BB86E3A4B16A79DB8CE,
-				444CE4D9A0BB481CAAE29D30,
+				D01BDB4D2349464197328F1B,
+				6E035A86840847D095F25975,
+				1780CA90A5584CE692768E6B,
+				F1666DDD5332448D806A0A09,
+				3577E1D6031049219D88746D,
+				5150949967A8436FB4D685E1,
+				94FE736230684ABFBDE7B93C,
+				79B8250448EC42D48191A933,
+				D9CCEBB3A73B4EDB8167C861,
+				49386E228D8E4934AC27D938,
 			);
 			name = "Dashboard";
 			sourceTree = "<group>";
 		};
-		25C5690842354C408BC05F4F = {
+		23774B9CE5DB437BBAF8A883 = {
 			isa = PBXGroup;
 			children = (
-				B5DE180F198A44948CA3EA0E,
-				1EBAFF4792B942ADA1F63357,
+				791C32B6584B4B82AD1F2B81,
+				FFFEAD54823F4139847AFB3A,
 			);
 			name = "Linking";
 			sourceTree = "<group>";
 		};
-		F344D8DDBBD740D28AA5583C = {
+		DE6E0C24C41F4465BC39085C = {
 			isa = PBXGroup;
 			children = (
-				7E1AC73F79D94FCF9855E1D2,
-				707C2E1A3EFF40A9BBB056D2,
-				23DF368842704A92AC1812C8,
-				B8B77A77F24D4552BC270282,
-				A7A5A124BFFA41F7BEC32E97,
-				4894BBB19A214B81A1510E4D,
+				BCBB8453FDB4467792720DE4,
+				408B6E2FFDC04587AD5C960F,
+				421A19137A684328BC7808DB,
+				959A6753B756481D8966166F,
+				F9AC14A2679D4564AC778678,
+				DDCDBAEE49C542BA9BE2B02F,
 			);
 			name = "Models";
 			sourceTree = "<group>";
 		};
-		0F41927F4A32440B88CB1E00 = {
+		262F4F2B127A47D082042460 = {
 			isa = PBXGroup;
 			children = (
-				384A3AF39EE14F7B876EE1DD,
-				AC3008E5876841248D26A792,
-				9BB1A97F0C93488BA6F018B5,
+				18D82745CA9E49D188E1682C,
+				D65A11565E864ACEA9D67A5C,
+				2CEF0F41CB6749C8A814C7FA,
 			);
 			name = "PlantAnimation";
 			sourceTree = "<group>";
 		};
-		2B6BC8FBFC4143BCBE57E191 = {
+		F947B862FBFD4E5195FE3279 = {
 			isa = PBXGroup;
 			children = (
-				5E025FDA4C234B388B9D4E9B,
-				7BD3D44E7EAB44C1B9DCAACE,
-				0CF1C941518A4E5A8C274605,
-				97863192DF2A41A298597E20,
+				4876CADB52F54964A024EE36,
+				0929BDCA9C9C4B49A82EDAC4,
+				9FDABF5CB8C44010A4A72C69,
+				70634D94062A4EB9B9BD378F,
 			);
 			name = "Services";
 			sourceTree = "<group>";
 		};
-		A32D76292AD6451AB345F266 = {
+		D1263EBB773847A28D22DA9F = {
 			isa = PBXGroup;
 			children = (
-				2BD868F381ED4109A6413568,
-				A22E50E25A8D4F64B12B0CC2,
-				67AABBC79E1E48FE84239851,
-				5E51ECEF18304B87B01F5C85,
-				ECDE2F2F8A9A4C2AB066B96A,
-				B722574230EA495C951D370F,
-				0F0DBC4D14F546B884D13ECF,
-				68F90B5539A044DE83819FBE,
-				633E63C9EA9B4C4BA3259808,
-				345424255B8A41B494159FF5,
+				650BEF7523F7429AA999E37B,
+				70E023C362D54129A1BA8E4F,
+				FC7123D02D1D4585A12399AF,
+				AD63BF76EE1A4AAD9369F926,
+				350CBF96FAC54B8AAE3151EA,
+				063EEFF6759E45869694123F,
+				3987E2C55DDF4FFB996BB3D9,
+				2C822E0CFA934274A121FAFF,
+				727472321DA243859593EFE9,
+				CF5770CA004A487FAF4182EA,
 			);
 			name = "StickyNote";
 			sourceTree = "<group>";
 		};
-		0F6C9FB0F5F94E4C8A97FE63 = {
+		62C517995F1745C38E37C72A = {
 			isa = PBXGroup;
 			children = (
-				3AE6D1C458B64036B0375494,
-				367A26929B844B629803A40A,
-				229766AC20EE43009B6DAB28,
-				CAFA590D06D34F3E97532361,
+				5E3C44A0C0B743A4885E2948,
+				CD4D559FE3594935B3FF1F81,
+				5947C7FEEF064488B6AA78B2,
+				4677BA60D36D4FC89AE9F403,
 			);
 			name = "Utilities";
 			sourceTree = "<group>";
 		};
-		9356B9A18949421E8E4222D4 = {
+		AA967E542E674016BE24586B = {
 			isa = PBXGroup;
 			children = (
-				807DE50A78444A80BD487AB8,
-				1E1CF3057D75474FBEBE2996,
-				25C5690842354C408BC05F4F,
-				F344D8DDBBD740D28AA5583C,
-				0F41927F4A32440B88CB1E00,
-				2B6BC8FBFC4143BCBE57E191,
-				A32D76292AD6451AB345F266,
-				0F6C9FB0F5F94E4C8A97FE63,
-				1556636C3C0B40D997929349,
-				BB6A2FDE7F854F71B97B06EB,
+				562015E620DF47DE9EBA2320,
+				9E4D3D31FBC04DE784E292BC,
+				23774B9CE5DB437BBAF8A883,
+				DE6E0C24C41F4465BC39085C,
+				262F4F2B127A47D082042460,
+				F947B862FBFD4E5195FE3279,
+				D1263EBB773847A28D22DA9F,
+				62C517995F1745C38E37C72A,
+				39769C6741544E94AA018C7E,
+				E336F0F460C54947A8BB1B50,
+				22D2EDC8B4F84B1C9E50AD32,
 			);
 			name = "StickyBloom";
 			path = "StickyBloom";
 			sourceTree = "<group>";
 		};
-		5533F177397E47A488278247 = {
+		5F9BC9DE2A4349C99AC7C494 = {
 			isa = PBXGroup;
 			children = (
-				1D1FDB5510794644991ACC7F,
+				D296136A554242E5BF7745D9,
 			);
 			name = "Products";
 			sourceTree = "<group>";
 		};
-		1F52E030B7F3443AA5DA91C6 = {
+		5EBF084CE65F4C4FB387080D = {
 			isa = PBXGroup;
 			children = (
-				9356B9A18949421E8E4222D4,
-				5533F177397E47A488278247,
+				AA967E542E674016BE24586B,
+				5F9BC9DE2A4349C99AC7C494,
 			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		43B7C9C200654F7DBD12D086 = {
+		2D0B3198A9934790A5CCCA25 = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EAC3240C30A0457385C5A9A3;
+			buildConfigurationList = 83F4FD6A000C46659D11478B;
 			buildPhases = (
-				1F1DDFEC629343D59E81665F,
-				EE9B4BF6DC234A439F934351,
-				9CAE47C651024DBDA100AE63,
+				3022F77947EE4F6A85B5DACB,
+				836E4619E9F1462694ED6223,
+				C88D47F8F2B74FAAA4A44911,
 			);
 			buildRules = (
 			);
@@ -259,23 +259,23 @@
 			);
 			name = StickyBloom;
 			productName = StickyBloom;
-			productReference = 1D1FDB5510794644991ACC7F;
+			productReference = D296136A554242E5BF7745D9;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		822E6A6D415747BA961F9F59 = {
+		C720082126244F03B764B2B9 = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					43B7C9C200654F7DBD12D086 = {
+					2D0B3198A9934790A5CCCA25 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = 3EE2BD3A30D74A5EA1159016;
+			buildConfigurationList = 1AD07282929A4E7FB9503329;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -283,80 +283,80 @@
 				en,
 				Base,
 			);
-			mainGroup = 1F52E030B7F3443AA5DA91C6;
-			productRefGroup = 5533F177397E47A488278247;
+			mainGroup = 5EBF084CE65F4C4FB387080D;
+			productRefGroup = 5F9BC9DE2A4349C99AC7C494;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				43B7C9C200654F7DBD12D086,
+				2D0B3198A9934790A5CCCA25,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9CAE47C651024DBDA100AE63 = {
+		C88D47F8F2B74FAAA4A44911 = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B5977A0C26140F495EECD68,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1F1DDFEC629343D59E81665F = {
+		3022F77947EE4F6A85B5DACB = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACA0B0EFA75744DDB09A6BBC,
-				72B0487A1032489DA9884344,
-				4E4E58D8B63A400EBF6B3911,
-				759310C3F5FD4E568581D7D8,
-				DF11DF41D8ED41F8BDE51963,
-				D58C072435624568A34F5657,
-				A6C23295C51342F3BEFEC03C,
-				490A0E3385F2423390499004,
-				3FA28DF1E47B476EB8E5B29B,
-				13EAC84078E340B69EE9CD4E,
-				F42FCAA5B1FE45F791D2DD7F,
-				12BDC4EA534A43599E5D1249,
-				3D574C52871D4CF5B754EC29,
-				C9EC211A186C493890A5C199,
-				E5D53EF6893448B78B5F2543,
-				F7B4AA5E247C4EAD9061FF4F,
-				2AF6331AE39448298A255EA8,
-				3C8E37757F444A9D8D73B974,
-				5473D5C60A7D48ECBF2E92E3,
-				EFA1BAA8F36A4C7B9C2EE629,
-				CC1CB0F5DBCA447B81107477,
-				3CB652E4C8DD478FB781DD25,
-				F7F770F00817450F950FD036,
-				F164E118E403480A9AAB98B9,
-				8B546CFA778C43C7A680EF54,
-				8DB1FB1E78344D2B948AC250,
-				8D695F82055B45ADB090AC14,
-				86E4747B8D9A4E9F827669AC,
-				C2B8E41662184A578A0FA561,
-				C0D0E5262B1249339D869495,
-				9D46E2484F734638A552302D,
-				81F459CC78C74218809B57D7,
-				4E3B3957F08846FDBAA40C06,
-				216C6FC3388C4C6095007CD7,
-				2E87DC58A78645EBA32CE4FD,
-				AFB67B3D4A414C518BF51445,
-				F26274265D47432BA97FA772,
-				C58FC47F2274468F97FF22FD,
-				F48B724C7B2943E581BA741D,
-				6405FEB4BC724FBE9625E75B,
-				795462FF9F0E4A6B9AA3AF6D,
-				341A319AE3E04DC2A8B9FC18,
+				F741B85F0DD34A7DA7BA68BB,
+				B22E51A6BBFE4D7A88488277,
+				A490B2BF13604BCEB24FEBF5,
+				EDB093B0805648069A0DDE5F,
+				F281E20DD99F4E3BA46EC240,
+				CB5275DFD18F4D47817D5251,
+				EF725772E0A64F38AD8B7F66,
+				DB0C2E0D3B744C7EBFEFA74A,
+				07BC8361AFF14C6AA072FE5B,
+				B80DF7EF797F4BBF93512ECD,
+				DF29197084944B80A0D0074A,
+				0A41140993A7439984FCFCA8,
+				D57B0A1781A246DAA826FB2E,
+				A68F750FFFC749208E85D649,
+				A346C1D286D24916A487FCD1,
+				AE61F59DA2AD4A358793A80B,
+				2022E7A020594EB29B1AEF9B,
+				FD248560FBA94EE3BFF5087F,
+				790BE735CD6C41F0B2FB50E7,
+				3263B75DB906442DBF81CF5E,
+				FB15FABB560448EFA65CF796,
+				28951ED4DB314087B4ECE701,
+				6A6699C3E27047B09E80A9EF,
+				C18A00A2A20841F8AF3BB007,
+				7A362BD0BD8B456E8F40BB48,
+				BC2C3496DA074D3E94967FA3,
+				E87DE262B616463084F5B3AF,
+				671FB522D81542AB95CEB97B,
+				DEBFF8F75FDC47AA81D2C1E4,
+				3183D3EA4D99441993FFF8CF,
+				6AF6179FD5734C7C87519FF0,
+				98F49F2AD2DF4B13897DBCF2,
+				FACFD12B43AA4C7D95AC145E,
+				071A1B9115AB49DDAFB6E6DD,
+				0723A739DF814232A70C8C6A,
+				9279DB5208804B919076B4DF,
+				CF080FC682F44A1AA899CEBB,
+				FE709D2EE52B4B6BA1A05B67,
+				CBF9AF8870B848699B9A4B3F,
+				54E6A5A718DD42379A41CE5F,
+				1612FF53728640B49A58B2DB,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		4A103AA4B20D438D9EBB4782 = {
+		DDB2A10CA8594082BAFA28CC = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -375,7 +375,7 @@
 			};
 			name = Debug;
 		};
-		50743930287D458E92DEA209 = {
+		4B3BDEF0ACBE4CA6BB63CE9B = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -394,7 +394,7 @@
 			};
 			name = Release;
 		};
-		B8CCC16D5ACC4FDBA14460D4 = {
+		44B25F2890864EA3AC969A48 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -412,7 +412,7 @@
 			};
 			name = Debug;
 		};
-		7DFEEBCC8A61420C8EE65027 = {
+		502D62DC4F474E9CA2606814 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -433,25 +433,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3EE2BD3A30D74A5EA1159016 = {
+		1AD07282929A4E7FB9503329 = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4A103AA4B20D438D9EBB4782,
-				50743930287D458E92DEA209,
+				DDB2A10CA8594082BAFA28CC,
+				4B3BDEF0ACBE4CA6BB63CE9B,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EAC3240C30A0457385C5A9A3 = {
+		83F4FD6A000C46659D11478B = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B8CCC16D5ACC4FDBA14460D4,
-				7DFEEBCC8A61420C8EE65027,
+				44B25F2890864EA3AC969A48,
+				502D62DC4F474E9CA2606814,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
 	};
-	rootObject = 822E6A6D415747BA961F9F59;
+	rootObject = C720082126244F03B764B2B9;
 }

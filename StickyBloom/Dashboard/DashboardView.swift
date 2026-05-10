@@ -50,7 +50,7 @@ struct DashboardView: View {
                 }
 
                 // Clock
-                ClockView()
+                ClockView(appState: appState, locationService: locationService)
 
                 Divider().opacity(0.3)
 
@@ -83,7 +83,7 @@ struct DashboardView: View {
 
                 if showSettings {
                     Divider().opacity(0.3)
-                    DashboardSettingsView(appState: appState)
+                    DashboardSettingsView(appState: appState, locationService: locationService)
                 }
 
                 Spacer(minLength: 0)

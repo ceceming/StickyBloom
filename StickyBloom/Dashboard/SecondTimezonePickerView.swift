@@ -1,7 +1,9 @@
 import SwiftUI
 
-struct SecondTimezonePickerView: View {
+struct TimezonePickerView: View {
+    let title: String
     @Binding var selectedIdentifier: String?
+    let noneOptionTitle: String?
     @Environment(\.dismiss) var dismiss
     @State private var searchText = ""
 
@@ -14,7 +16,7 @@ struct SecondTimezonePickerView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                Text("Select Timezone")
+                Text(title)
                     .font(.headline)
                 Spacer()
                 Button("Done") { dismiss() }
@@ -29,15 +31,6 @@ struct SecondTimezonePickerView: View {
             ScrollView {
                 zoneRows
             }
-
-            if selectedIdentifier != nil {
-                Button("Remove Second Timezone") {
-                    selectedIdentifier = nil
-                    dismiss()
-                }
-                .foregroundStyle(.red)
-                .padding()
-            }
         }
         .frame(width: 360, height: 460)
     }
@@ -45,6 +38,29 @@ struct SecondTimezonePickerView: View {
     @ViewBuilder
     private var zoneRows: some View {
         LazyVStack(alignment: .leading, spacing: 0) {
+            if let noneOptionTitle {
+                Button {
+                    selectedIdentifier = nil
+                    dismiss()
+                } label: {
+                    HStack {
+                        Text(noneOptionTitle)
+                            .font(.body)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        if selectedIdentifier == nil {
+                            Image(systemName: "checkmark")
+                                .foregroundStyle(Color.accentColor)
+                        }
+                    }
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                Divider()
+            }
+
             ForEach(AnyRandomAccessCollection<String>(filteredZones), id: \.self) { (identifier: String) in
                 Button {
                     selectedIdentifier = identifier
